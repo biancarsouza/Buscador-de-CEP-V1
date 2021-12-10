@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.form`
 
-    margin-top: 7rem;
+    margin-top: 15.5rem;
 
     .input {
 
