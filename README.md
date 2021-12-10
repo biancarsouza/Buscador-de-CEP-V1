@@ -21,6 +21,7 @@ $ cd Buscador-de-CEP
 3 - Instale as dependências do programa com o seguinte comando, ainda no terminal:
 ```bash
 $ yarn
+$ yarn add react-toastify
 ```
 4 - Abra a pasta "Buscador-de-CEP" em um editor de código, como o [VSCode](https://code.visualstudio.com/).
 5 - Abra o terminal (Ctrl + `) e execute o comando abaixo.

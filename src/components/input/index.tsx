@@ -1,9 +1,12 @@
 import axios from "axios";
+import { toast } from 'react-toastify';
 import React, { useState, FormEvent } from "react";
 import InputMask from "react-input-mask";
 import { Container } from "./styles";
 
-export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputElement> | undefined; value: string | number | readonly string[] | undefined; }) {
+import 'react-toastify/dist/ReactToastify.min.css';
+
+export function CEPInput(props: { onChange: React.ChangeEventHandler<HTMLInputElement> | undefined; value: string | number | readonly string[] | undefined; }) {
 
   const [cep, setCep] = useState('');
 
@@ -28,6 +31,21 @@ export function DateInput(props: { onChange: React.ChangeEventHandler<HTMLInputE
         setCity(response.data.city);
         setDistrict(response.data.district);
         setAdress(response.data.address);
+
+        if (response.data.code === undefined) {
+          toast.error("Digite um CEP válido.", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            className: 'toast',
+          });
+          return;
+        }
+
       })
   }
   
